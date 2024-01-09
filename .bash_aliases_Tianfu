@@ -1,6 +1,16 @@
+# Shortcuts
+alias SB='source ~/.bashrc'
+alias CMCWS='cd /home/louis/catkin_ws && catkin_make && source ~/.bashrc'
+alias MOUNT_PHD='rclone --vfs-cache-mode full mount louis_onedrive:Louis onedrive/ --allow-other'
+
+function RESET_TEAMS {
+	rm -rf ~/.config/teams
+	rm -rf ~/.config/Microsoft/Microsoft\ Teams
+}
+
 # ROS
 source /opt/ros/noetic/setup.bash
-source /home/louis/git_pkg_ws/devel/setup.bash
+# source /home/louis/git_pkg_ws/devel/setup.bash
 source /home/louis/catkin_ws/devel/setup.bash
 
 # Virtual envs
