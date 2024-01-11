@@ -2,6 +2,10 @@
 alias SB='source ~/.bashrc'
 alias CMCWS='cd /home/louis/catkin_ws && catkin_make && source ~/.bashrc'
 alias MOUNT_PHD='rclone --vfs-cache-mode full mount louis_onedrive:Louis onedrive/ --allow-other'
+alias UTSCLUSTER='ssh lffernan@access.ihpc.uts.edu.au'
+
+export WORKON_HOME=$HOME/.virtualenvs
+source /home/louis/.local/bin/virtualenvwrapper.sh
 
 function RESET_TEAMS {
 	rm -rf ~/.config/teams
