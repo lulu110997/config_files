@@ -3,7 +3,7 @@ alias SB='source ~/.bashrc'
 alias CMCWS='cd /home/louis/catkin_ws && catkin_make && source ~/.bashrc'
 alias MOUNT_PHD='rclone --vfs-cache-mode full mount louis_onedrive:Louis onedrive/ --allow-other'
 alias UTSCLUSTER='ssh lffernan@access.ihpc.uts.edu.au'
-
+alias DOCKER_RM='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 export WORKON_HOME=$HOME/.virtualenvs
 source /home/louis/.local/bin/virtualenvwrapper.sh
 
@@ -29,3 +29,28 @@ export TF_CUDA_PATHS=/usr/local/cuda-11.8,/usr/lib/x86_64-linux-gnu,/usr/include
 
 # Caffe not found when using OpenPose as a library. Either add it the the path below or link the below path to the cmake of project
 # export LD_LIBRARY_PATH=/home/louis/Git/openpose/build/caffe/lib:$LD_LIBRARY_PATH
+
+## DOCKER shortcuts
+# docker run -a stdin -a stdout -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/louis/Github/awi_interns/contaminant_detection/yolov5/:/home/yolov5_container/yolov5/ --shm-size 8G --gpus all --network host contaminant_detection
+# -v mounts required dirs (volumes) for the dataset and using GUI inside the container
+# -a attaches stdin and stdout to the container
+# -it allows the conainer to be interactive
+# -e is an environmental flag for setting environment variables
+# --shm-size 8G setting a bigger shm-size solves the "bus error (core dumped)" error from pytorch. shm is the shared memory that a container is allowed to use
+# --gpus all enables the container to access the GPU
+# --network connects the docker's network to host. Used for ros
+
+# docker rmi REPOSITORY/TAG or IMAGE_ID
+# docker ps
+# docker images
+# docker stop CONTAINER_ID
+# docker rm CONTAINER_ID (use -f to kill and remove container. Better to docker stop first)
+
+# Runs an existing container as root. Useful for changing pwd of user
+# docker exec -u 0 -it CONTAINER_ID bash
+
+# Save changes made in the container to an image. Progress is not documented when committing!!!
+# docker commit CONTAINER_ID contaminant_detection:latest
+
+# Change ownership of a DIRECTORY from root to user
+# sudo chown $USER path/to/directory -R
