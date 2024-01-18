@@ -3,6 +3,7 @@
 *.png
 *.mp4
 *.csv
+*.pdf
 
 # Artefacts, executables and libraries
 *.pyc
@@ -23,6 +24,12 @@
 *.out
 *.app
 
+# Serialised data
+*.pkl
+*.npy
+*.pt
+*.tflite
+
 # IDE settings
 *.vscode
 *.idea
@@ -34,3 +41,4 @@ __pycache__/
 results/
 pickles/
 data/
+logs/
