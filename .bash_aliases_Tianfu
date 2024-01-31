@@ -54,3 +54,13 @@ export TF_CUDA_PATHS=/usr/local/cuda-11.8,/usr/lib/x86_64-linux-gnu,/usr/include
 
 # Change ownership of a DIRECTORY from root to user
 # sudo chown $USER path/to/directory -R
+
+# nui track and rviz issue/conflict with libyaml-cpp
+# https://community.nuitrack.com/t/nuitrack-shows-an-empty-screen-on-rviz/2929
+# https://answers.ros.org/question/282495/rviz-symbol-lookup-error/
+# https://answers.ros.org/question/282495/rviz-symbol-lookup-error/
+# export LD_LIBRARY_PATH=/home/louis/catkin_ws/devel/lib:/opt/ros/noetic/lib:/usr/lib/x86_64-linux-gnu/
+# export LD_LIBRARY_PATH=/home/louis/catkin_ws/devel/lib:/opt/ros/noetic/lib:/usr/local/lib/nuitrack
+
+# Also, nuitrack and blender
+# https://community.nuitrack.com/t/bug-nuitrack-sdk-breaks-blender3d/2390
