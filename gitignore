@@ -30,6 +30,7 @@
 *.npy
 *.pt
 *.tflite
+*.h5
 
 # IDE settings
 *.vscode
@@ -42,4 +43,6 @@ __pycache__/
 results/
 pickles/
 data/
+log/
 logs/
+bin/
