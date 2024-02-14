@@ -1,0 +1,28 @@
+BootStrap: docker
+From: tensorflow/tensorflow:2.15.0.post1-gpu
+
+%labels
+
+AUTHOR Louis Fernandez louis.f.fernandez@student.uts.edu.au
+
+%environment
+        export HOME=/scratch/lffernan/
+        export PATH=$PATH:/scratch/lffernan/.local/bin
+
+%files
+
+
+%post
+
+    apt-get -y -q update 
+    apt-get install -y libgsl-dev git curl
+    apt-get install -y git make cmake g++ libeigen3-dev gfortran libmetis-dev \
+        libopenvdb-dev libboost-all-dev libilmbase-dev libopenexr-dev \
+        libtbb2 libtbb-dev libz-dev
+
+
+    apt-get -y install vim nano
+    python3 -m pip install --upgrade pip
+    pip install optuna pyyaml matplotlib joblib scikit-learn
+    apt-get clean
+    apt-get -y autoremove

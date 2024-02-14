@@ -22,10 +22,10 @@ export WORKON_HOME=/home/louis/.virtualenvs
 source ~/.local/bin/virtualenvwrapper.sh
 
 # CUDA
-export CUDA_HOME=/usr/local/cuda-11.8
+export CUDA_HOME=/usr/local/cuda-12.2
 export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
-export PATH=$PATH:/usr/local/cuda-11.8/bin/
-export TF_CUDA_PATHS=/usr/local/cuda-11.8,/usr/lib/x86_64-linux-gnu,/usr/include
+export PATH=$PATH:/usr/local/cuda-12.2/bin/
+export TF_CUDA_PATHS=/usr/local/cuda-12.2:/usr/lib/x86_64-linux-gnu:/usr/include
 
 # Caffe not found when using OpenPose as a library. Either add it the the path below or link the below path to the cmake of project
 # export LD_LIBRARY_PATH=/home/louis/Git/openpose/build/caffe/lib:$LD_LIBRARY_PATH
