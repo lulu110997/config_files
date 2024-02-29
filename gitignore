@@ -23,6 +23,8 @@
 *.exe
 *.out
 *.app
+*.txt
+*.log
 
 # Serialised data
 *.pkl
