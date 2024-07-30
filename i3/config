@@ -190,7 +190,7 @@ bar {
 }
 
 bindsym $mod+Shift+Return exec firefox
-bindsym --release $mod+Shift+s exec "gnome-screenshot -acf /tmp/test.png && xclip -in -selection clipboard -target image/png /tmp/test.png"
+bindsym --release $mod+Shift+s exec "gnome-screenshot -acf ~/test.png && xclip -in -selection clipboard -target image/png ~/test.png"
 bindsym $mod+Shift+n exec "nautilus"
 
 # Move the current workspace to the next output
